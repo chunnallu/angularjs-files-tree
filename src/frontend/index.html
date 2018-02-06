@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>测试树状组件</title>
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- inject:css -->
+    <!-- endinject -->
+</head>
+<body ng-app="myapp" ng-controller="appcontroller as ctrl" >
+
+<h1>测试树状组件</h1>
+
+<div ui-tree>
+    <ol ui-tree-nodes="" ng-model="list">
+        <li ng-repeat="item in list" ui-tree-node>
+            <div ui-tree-handle>
+                {{item.title}}
+            </div>
+            <ol ui-tree-nodes="" ng-model="item.nodes">
+                <li ng-repeat="subItem in item.nodes" ui-tree-node>
+                    <div ui-tree-handle>
+                        {{subItem.title}}
+                    </div>
+                </li>
+            </ol>
+        </li>
+    </ol>
+</div>
+
+<!-- bower:js -->
+<!-- endbower -->
+
+<!-- inject:js -->
+<!-- endinject -->
+</body>
+</html>
