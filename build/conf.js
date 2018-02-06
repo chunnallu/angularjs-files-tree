@@ -11,6 +11,9 @@ export const conf = {
 		bower_components:path.join(basePath,"bower_components"),
 		bower_components_dist:path.join(basePath,"dist/bower_components")
 	},
+	assets:{
+		path:path.join(basePath,"src/assets"),
+	},
 	backend:{
 		src:path.join(basePath,"src/backend"),
 		dist:path.join(basePath,"dist")

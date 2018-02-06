@@ -21,7 +21,8 @@
     "normalize-css": "^7.0.0",
     "angular-ui-ace": "bower",
     "angular-material": "^1.1.6",
-    "angular-ui-tree": "^2.22.6"
+    "angular-ui-tree": "^2.22.6",
+    "jstree": "^3.3.5"
   },
   "overrides": {
     "ace-builds": {
