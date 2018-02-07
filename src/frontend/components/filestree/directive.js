@@ -29,13 +29,15 @@ export default function directive(nodeTypeFilter) {
         });
         let tree = $.jstree.reference("#"+treeId);
         // 绑定事件
-        bindingEvents(tree,treeDom);
+        bindingEvents(treeDom,onUpdateCallback,tree);
     }
 
 
 
-    function bindingEvents(tree,treeDom){
-
+    function bindingEvents(treeDom,updateCallback,tree,){
+        treeDom.on('select_node.jstree',(event,selected)=>{
+            updateCallback && updateCallback(selected.node.original);
+        })
     }
 
 
@@ -44,11 +46,10 @@ export default function directive(nodeTypeFilter) {
         restrict:"A",
         scope:{
             'data':"=",
-            'onUpdate':'<',
+            'onSelect':'<',
         },
         link:(scope,element,attr)=>{
             createTree(scope,element,attr);
-        },
-        templateUrl:"components/filestree/filestree.html",
+        }
     }
 }

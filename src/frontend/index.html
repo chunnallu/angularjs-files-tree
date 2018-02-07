@@ -13,7 +13,12 @@
 
 <h1>测试树状组件</h1>
 
-<div file-tree data="ctrl.data" on-update=""></div>
+<div class="file-editor">
+    <div file-tree class="file-tree" data="ctrl.data" on-select="ctrl.showFileContent"></div>
+    <textarea class="file-content" ng-model="ctrl.selectedNode.content">{{ctrl.selectedNode.content}}</textarea>
+</div>
+
+
 
 
 <!-- bower:js -->

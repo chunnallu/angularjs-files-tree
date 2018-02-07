@@ -13,4 +13,18 @@ h1{
     text-align: center;
     border-bottom: 1px solid rgba(31, 31, 31, 0.44);
 }
-.kd-ace { height: 200px; }
+.file-editor{
+    display: flex;
+    flex-direction: row;
+    .file-tree{
+        flex-grow: 0;
+        border: 1px solid #ccc;
+        padding: .5rem 1rem;
+    }
+    .file-content{
+        flex-grow: 1;
+        min-height: 200px;
+        padding: .5rem 1rem;
+    }
+}
+
