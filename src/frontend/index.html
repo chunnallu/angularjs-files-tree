@@ -14,7 +14,7 @@
 <h1>测试树状组件</h1>
 
 <div class="file-editor">
-    <div file-tree class="file-tree" data="ctrl.data" on-select="ctrl.showFileContent"></div>
+    <div file-tree class="file-tree" data="ctrl.data" on-select="ctrl.showFileContent" expand-all="true"></div>
     <textarea class="file-content" ng-model="ctrl.selectedNode.content">{{ctrl.selectedNode.content}}</textarea>
 </div>
 

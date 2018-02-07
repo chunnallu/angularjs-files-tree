@@ -1,10 +1,13 @@
 /**
  * Created by lcl on 2018/2/6.
  */
-export default function directive(nodeTypeFilter) {
+export default function directive(nodeTypeFilter,expandAllFilter) {
     function createTree(scope,element,attr){
         let data = nodeTypeFilter(scope.data);
-        let onUpdateCallback = scope.onUpdate;
+        if(scope.expandAll){
+           data =  expandAllFilter(data);
+        }
+        let onSelectCallback = scope.onSelect;
         let treeId = new Date().getTime();
         let container = element.html(`<div id="${treeId}" ></div>`);
         let treeDom = $(`#${treeId}`).jstree({
@@ -29,14 +32,14 @@ export default function directive(nodeTypeFilter) {
         });
         let tree = $.jstree.reference("#"+treeId);
         // 绑定事件
-        bindingEvents(treeDom,onUpdateCallback,tree);
+        bindingEvents(treeDom,onSelectCallback,tree);
     }
 
 
 
-    function bindingEvents(treeDom,updateCallback,tree,){
+    function bindingEvents(treeDom,selectCallback,tree,){
         treeDom.on('select_node.jstree',(event,selected)=>{
-            updateCallback && updateCallback(selected.node.original);
+            selectCallback && selectCallback(selected.node.original);
         })
     }
 
@@ -47,6 +50,7 @@ export default function directive(nodeTypeFilter) {
         scope:{
             'data':"=",
             'onSelect':'<',
+            'expandAll':'='
         },
         link:(scope,element,attr)=>{
             createTree(scope,element,attr);
