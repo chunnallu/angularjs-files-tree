@@ -29,8 +29,10 @@ export default class AppController {
 
     // 显示文件内容
     showFileContent(node){
-        this.$scope.$apply(()=>{
-            this.selectedNode = node;
-        });
+        if(node.type==="file"){
+            this.$scope.$apply(()=>{
+                this.selectedNode = node;
+            });
+        }
     }
 }
