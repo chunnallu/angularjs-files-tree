@@ -1,5 +1,5 @@
 {
-  "name": "tree-view",
+  "name": "files-tree",
   "version": "1.0.0",
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -22,8 +22,5 @@
     "postinstall": "bower install --allow-root",
     "start": "gulp serve:watch",
     "build": "gulp build"
-  },
-  "dependencies": {
-    "express": "^4.16.2"
   }
 }

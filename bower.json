@@ -1,6 +1,6 @@
 {
-  "name": "tncts",
-  "description": "tncts website",
+  "name": "files tree",
+  "description": "angulas.js files tree component base on jstree",
   "main": "",
   "authors": [
     "lcl"
@@ -16,33 +16,13 @@
     "tests"
   ],
   "dependencies": {
-    "ace-builds": "^1.3.0",
     "angular": "^1.6.6",
-    "normalize-css": "^7.0.0",
-    "angular-ui-ace": "bower",
-    "angular-material": "^1.1.6",
-    "angular-ui-tree": "^2.22.6",
     "jstree": "^3.3.5"
   },
   "overrides": {
-    "ace-builds": {
-      "main": [
-        "src-min-noconflict/ace.js",
-        "src-min-noconflict/mode-yaml.js",
-        "src-min-noconflict/mode-javascript.js",
-        "src-min-noconflict/mode-markdown.js",
-        "src-min-noconflict/theme-github.js",
-        "src-min-noconflict/ext-language_tools.js"
-      ]
-    },
     "angular": {
       "main": [
         "angular.min.js"
-      ]
-    },
-    "angular-ui-router": {
-      "main": [
-        "./release/angular-ui-router.min.js"
       ]
     }
   },
